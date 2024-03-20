@@ -23,9 +23,14 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        alignment: Alignment.center,
-        child: Lottie.asset('assets/Animation - 1710182155344.json'),
+      body: Column(
+        children: [
+          Container(
+            alignment: Alignment.center,
+            child: Lottie.asset('assets/animate.json'),
+          ),
+          Text('Weather App'),
+        ],
       ),
     );
   }

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:weather/theme/weather_color.dart';
+import 'package:weather/weather_provider/theme_provider.dart';
 
 class HomeSideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var themeProvider = Provider.of<ThemeProvider>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -45,27 +48,32 @@ class HomeSideMenu extends StatelessWidget {
         SizedBox(
           height: 6,
         ),
-        Row(
-          children: [
-            SizedBox(
-              width: 4,
-            ),
-            Icon(
-              Icons.dark_mode,
-              size: 30,
-            ),
-            SizedBox(
-              width: 6,
-            ),
-            Text(
-              'Dark',
-              style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.normal,
-                  color: WeatherColor.black,
-                  fontFamily: GoogleFonts.roboto().fontFamily),
-            ),
-          ],
+        InkWell(
+          onTap: () {
+            themeProvider.changeTheme(ThemeMode.dark);
+          },
+          child: Row(
+            children: [
+              SizedBox(
+                width: 4,
+              ),
+              Icon(
+                Icons.dark_mode,
+                size: 30,
+              ),
+              SizedBox(
+                width: 6,
+              ),
+              Text(
+                'Dark',
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.normal,
+                    color: WeatherColor.black,
+                    fontFamily: GoogleFonts.roboto().fontFamily),
+              ),
+            ],
+          ),
         ),
       ],
     );
