@@ -86,9 +86,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             itemBuilder: (context, index) => Column(
                               children: [
                                 Text(
-                                    '${(data?.list?[0]?.main?.temp?.toDouble())! - 273.57 ?? ""}ُْْC',
+                                    '${(data?.list?[0]?.main?.temp?.toDouble())! - 273.57 ?? ""}°C',
                                     style: TextStyle(
-                                      fontSize: 100,
+                                      fontSize: 50,
                                       fontWeight: FontWeight.normal,
                                       color: WeatherColor.mainColor,
                                       fontFamily:
@@ -138,6 +138,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                         )),
                                   ],
                                 ),
+
+                                //   Forecast for today
                                 Card(
                                   margin: EdgeInsets.all(18),
                                   shadowColor: WeatherColor.grey,
@@ -145,6 +147,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   child: Container(
                                     alignment: Alignment.topLeft,
                                     child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           'Forecast for today',
@@ -152,96 +156,114 @@ class _HomeScreenState extends State<HomeScreen> {
                                               .textTheme
                                               .displaySmall,
                                         ),
-                                        SingleChildScrollView(
-                                          scrollDirection: Axis.horizontal,
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                '${(data?.list?[0].main?.temp?.toDouble())! - 273.57 ?? ""}',
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .displaySmall,
-                                              ),
-                                              SizedBox(
-                                                width: 8,
-                                              ),
-                                              Text(
-                                                '${(data?.list?[1].main?.temp?.toDouble())! - 273.57 ?? ""}',
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .displaySmall,
-                                              ),
-                                              SizedBox(
-                                                width: 8,
-                                              ),
-                                              Text(
-                                                '${(data?.list?[2].main?.temp?.toDouble())! - 273.57 ?? ""}',
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .displaySmall,
-                                              ),
-                                              SizedBox(
-                                                width: 8,
-                                              ),
-                                              Text(
-                                                '${(data?.list?[3].main?.temp?.toDouble())! - 273.57 ?? ""}',
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .displaySmall,
-                                              ),
-                                              SizedBox(
-                                                width: 8,
-                                              ),
-                                            ],
-                                          ),
+                                        SizedBox(
+                                          height: 8,
                                         ),
-                                        SingleChildScrollView(
-                                          scrollDirection: Axis.horizontal,
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                '${(data?.list?[0].main?.temp?.toDouble())! - 273.57 ?? ""}',
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .displaySmall,
-                                              ),
-                                              SizedBox(
-                                                width: 8,
-                                              ),
-                                              Text(
-                                                '${(data?.list?[1].main?.temp?.toDouble())! - 273.57 ?? ""}',
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .displaySmall,
-                                              ),
-                                              SizedBox(
-                                                width: 8,
-                                              ),
-                                              Text(
-                                                '${(data?.list?[2].main?.temp?.toDouble())! - 273.57 ?? ""}',
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .displaySmall,
-                                              ),
-                                              SizedBox(
-                                                width: 8,
-                                              ),
-                                              Text(
-                                                '${(data?.list?[3].main?.temp?.toDouble())! - 273.57 ?? ""}',
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .displaySmall,
-                                              ),
-                                              SizedBox(
-                                                width: 8,
-                                              ),
-                                            ],
-                                          ),
+                                        Column(
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  'Now',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .displayMedium,
+                                                ),
+                                                SizedBox(
+                                                  width: 8,
+                                                ),
+                                                Text(
+                                                  '1500',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .displayMedium,
+                                                ),
+                                                SizedBox(
+                                                  width: 8,
+                                                ),
+                                                Text(
+                                                  '18:00',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .displayMedium,
+                                                ),
+                                                SizedBox(
+                                                  width: 8,
+                                                ),
+                                                Text(
+                                                  '21:00',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .displayMedium,
+                                                ),
+                                                SizedBox(
+                                                  width: 8,
+                                                ),
+                                                Text(
+                                                  '00:00',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .displayMedium,
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 8,
+                                            ),
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  '${(data?.list?[0].main?.temp?.toDouble())! - 273.57 ?? ""}',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .displaySmall,
+                                                ),
+                                                SizedBox(
+                                                  width: 8,
+                                                ),
+                                                Text(
+                                                  '${(data?.list?[1].main?.temp?.toDouble())! - 273.57 ?? ""}',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .displaySmall,
+                                                ),
+                                                SizedBox(
+                                                  width: 8,
+                                                ),
+                                                Text(
+                                                  '${(data?.list?[2].main?.temp?.toDouble())! - 273.57 ?? ""}',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .displaySmall,
+                                                ),
+                                                SizedBox(
+                                                  width: 8,
+                                                ),
+                                                Text(
+                                                  '${(data?.list?[3].main?.temp?.toDouble())! - 273.57 ?? ""}',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .displaySmall,
+                                                ),
+                                                SizedBox(
+                                                  width: 8,
+                                                ),
+                                                Text(
+                                                  '${(data?.list?[4].main?.temp?.toDouble())! - 273.57 ?? ""}',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .displaySmall,
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
                                       ],
                                     ),
                                   ),
                                 ),
+
+                                //  7-day forecast
                                 Container(
                                   margin: EdgeInsets.all(8),
                                   alignment: Alignment.topLeft,
@@ -260,97 +282,329 @@ class _HomeScreenState extends State<HomeScreen> {
                                         indent: 10,
                                         endIndent: 10,
                                       ),
-                                      Text('Today',
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.normal,
-                                              color: WeatherColor.black,
-                                              fontFamily: GoogleFonts.roboto()
-                                                  .fontFamily)),
+                                      Row(
+                                        children: [
+                                          Text('Today',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.black,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                              '${(data?.list?[0].main?.tempMin?.toDouble())! - 273.57 ?? ""}°C',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.grey,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                              '${(data?.list?[0].main?.tempMax?.toDouble())! - 273.57 ?? ""}°C',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.black,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                        ],
+                                      ),
                                       Divider(
                                         color: WeatherColor.grey,
                                         indent: 10,
                                         endIndent: 10,
                                       ),
-                                      Text('Wed',
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.normal,
-                                              color: WeatherColor.black,
-                                              fontFamily: GoogleFonts.roboto()
-                                                  .fontFamily)),
+                                      Row(
+                                        children: [
+                                          Text('Wed',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.black,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                              '${(data?.list?[1].main?.tempMin?.toDouble())! - 273.57 ?? ""}°C',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.grey,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                              '${(data?.list?[1].main?.tempMax?.toDouble())! - 273.57 ?? ""}°C',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.black,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                        ],
+                                      ),
                                       Divider(
                                         color: WeatherColor.grey,
                                         indent: 10,
                                         endIndent: 10,
                                       ),
-                                      Text('Thu',
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.normal,
-                                              color: WeatherColor.black,
-                                              fontFamily: GoogleFonts.roboto()
-                                                  .fontFamily)),
+                                      Row(
+                                        children: [
+                                          Text('Thu',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.black,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                              '${(data?.list?[2].main?.tempMin?.toDouble())! - 273.57 ?? ""}°C',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.grey,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                              '${(data?.list?[2].main?.tempMax?.toDouble())! - 273.57 ?? ""}°C',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.black,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                        ],
+                                      ),
                                       Divider(
                                         color: WeatherColor.grey,
                                         indent: 10,
                                         endIndent: 10,
                                       ),
-                                      Text('Fri',
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.normal,
-                                              color: WeatherColor.black,
-                                              fontFamily: GoogleFonts.roboto()
-                                                  .fontFamily)),
+                                      Row(
+                                        children: [
+                                          Text('Fri',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.black,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                              '${(data?.list?[3].main?.tempMin?.toDouble())! - 273.57 ?? ""}°C',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.grey,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                              '${(data?.list?[3].main?.tempMax?.toDouble())! - 273.57 ?? ""}°C',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.black,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                        ],
+                                      ),
                                       Divider(
                                         color: WeatherColor.grey,
                                         indent: 10,
                                         endIndent: 10,
                                       ),
-                                      Text('San',
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.normal,
-                                              color: WeatherColor.black,
-                                              fontFamily: GoogleFonts.roboto()
-                                                  .fontFamily)),
+                                      Row(
+                                        children: [
+                                          Text('San',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.black,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                              '${(data?.list?[4].main?.tempMin?.toDouble())! - 273.57 ?? ""}°C',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.grey,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                              '${(data?.list?[4].main?.tempMax?.toDouble())! - 273.57 ?? ""}°C',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.black,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                        ],
+                                      ),
                                       Divider(
                                         color: WeatherColor.grey,
                                         indent: 10,
                                         endIndent: 10,
                                       ),
-                                      Text('Sun',
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.normal,
-                                              color: WeatherColor.black,
-                                              fontFamily: GoogleFonts.roboto()
-                                                  .fontFamily)),
+                                      Row(
+                                        children: [
+                                          Text('Sun',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.black,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                              '${(data?.list?[5].main?.tempMin?.toDouble())! - 273.57 ?? ""}°C',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.grey,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                              '${(data?.list?[5].main?.tempMax?.toDouble())! - 273.57 ?? ""}°C',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.black,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                        ],
+                                      ),
                                       Divider(
                                         color: WeatherColor.grey,
                                         indent: 10,
                                         endIndent: 10,
                                       ),
-                                      Text('Mon',
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.normal,
-                                              color: WeatherColor.black,
-                                              fontFamily: GoogleFonts.roboto()
-                                                  .fontFamily)),
+                                      Row(
+                                        children: [
+                                          Text('Mon',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.black,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                              '${(data?.list?[6].main?.tempMin?.toDouble())! - 273.57 ?? ""}°C',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.grey,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                              '${(data?.list?[6].main?.tempMax?.toDouble())! - 273.57 ?? ""}°C',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.black,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                        ],
+                                      ),
                                       Divider(
                                         color: WeatherColor.grey,
                                         indent: 10,
                                         endIndent: 10,
                                       ),
-                                      Text('Teus',
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.normal,
-                                              color: WeatherColor.black,
-                                              fontFamily: GoogleFonts.roboto()
-                                                  .fontFamily)),
+                                      Row(
+                                        children: [
+                                          Text('Teus',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.black,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                              '${(data?.list?[7].main?.tempMin?.toDouble())! - 273.57 ?? ""}°C',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.grey,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                              '${(data?.list?[7].main?.tempMax?.toDouble())! - 273.57 ?? ""}°C',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: WeatherColor.black,
+                                                  fontFamily:
+                                                      GoogleFonts.roboto()
+                                                          .fontFamily)),
+                                        ],
+                                      ),
                                       Divider(
                                         color: WeatherColor.grey,
                                         indent: 10,
